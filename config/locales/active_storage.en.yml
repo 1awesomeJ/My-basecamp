@@ -1,0 +1,7 @@
+en:
+  active_storage:
+    attachments:
+      #drop: "Drop files here"
+      add: "Click this button to Add files"
+      #remove: "Remove"
+

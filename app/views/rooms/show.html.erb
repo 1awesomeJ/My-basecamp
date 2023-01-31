@@ -1,0 +1,25 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @room %>
+
+<div>
+  <%= link_to "Edit this thread", edit_room_path(@room), class: "btn btn-primary btn-sm" %> 
+  <%= link_to "Back to threads", rooms_path, class: "btn btn-dark btn-sm" %>
+  <%= link_to "Add a new message", new_room_message_path(@room), class: "btn btn-success btn-sm" %>
+</div>
+<p>
+<% @room.messages.each do |message| %>
+  <div><h7><%= message.user.email %> wrote: </h7>
+    <strong> <p><%= message.content %> </strong>
+<%= link_to "Edit", edit_room_message_path(@room, message), class: "btn btn-outline-info btn-sm" %> 
+<%= link_to "Delete", message, class: "btn btn-outline-danger btn-sm", method: :delete %>
+
+    </div>
+  <% end %>
+
+  <p>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <%= button_to "Delete this thread", @room, method: :delete, class: "btn btn-danger btn-sm" %>

@@ -1,0 +1,10 @@
+<h1>Editing thread</h1>
+
+<%= render "form", room: @room %>
+
+<br>
+
+<div>
+  <%= link_to "Show this thread", @room, class: "btn btn-primary" %> 
+  <%= link_to "Back to threads", rooms_path, class: "btn btn-dark" %>
+</div>

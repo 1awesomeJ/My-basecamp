@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<header>
+<nav>
+<ul>
+<li>HOME</li>
+<li>ABOUT US</li>
+<li>CONCERTS</li>
+</ul>
+</nav>
+<hr>
+<h1> The Truthers</h1>
+</header>
+<section>
+<h2> About </h2>
+<p> As the Scriptures say, God is looking for true worshippers
+who would worship the Father in Spirit and in truth.
+We are a band that hopes to inspire and raise the next generation of true
+worshippers-such as the father seeks.</p>
+<img src ="truthers_1.jpg">
+<p>
+We're not fixed as a band. Our membership is always open to any vessel
+that's available for God to use at any moment in time, subject to us
+checking with the Holy Spirit, so one of us who leads a worship session today
+may tomorrow be in the congregation to be led into worship, whereas someone
+who was just in the audience at a previous meeting, could be the one leading
+a current session, if they'd make themselves available for use by the Father.
+</p>
+</section>
+<footer>
+<h3>The Truthers</h3>
+<ul>
+<li><img src="facebook_1.png"></li>
+<li><img src="twitter_1.png"></li>
+<li><img src="youtube_1.png"></li>
+</ul>
+</footer>
+</body>
+</html>

@@ -1,0 +1,11 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @message %>
+
+<div>
+  <%= link_to "Back to threads", rooms_path, class: "btn btn-secondary btn-sm" %>
+
+  <p>
+
+  <%= button_to "Delete this message", @message, class: "btn btn-danger btn-sm", method: :delete %>
+</div>

@@ -1,0 +1,31 @@
+<h2>Log in</h2>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: false } ) do |f| %>
+   <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field form-group">
+    <% f.label :email %><br />
+    <%= f.email_field :email, class: "form-control", placeholder:"Enter your registered Email", autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field form-group">
+    <% f.label :password %><br />
+    <%= f.password_field :password, class: "form-control", placeholder:"Enter your correct password", autocomplete: "current-password" %>
+  </div>
+
+  <% if devise_mapping.rememberable? %>
+    <div class="field form-group">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit "Log in", class: 'btn btn-success' %>
+  </div>
+<% end %>
+   <% if resource.errors.any? %>   
+  <h6>Password in</h6>
+   <% end %>
+   </br>
+<%= render "devise/shared/links" %>

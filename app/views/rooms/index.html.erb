@@ -1,0 +1,23 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Threads</h1>
+
+<b>These are all the current threads:</b>
+</br></br>
+
+<div id="rooms">
+ <table class = "table table-stripped table-bordered table-hover">
+    <thead class = "thead-dark">
+
+  <% @rooms.each do |room| %>
+    <%= render room %>
+    <p>
+      <%= link_to "Show this thread", room, class: "btn btn-primary btn-sm" %>
+    </p>
+    </br>
+  <% end %>
+     </thead>
+    </table>
+</div>
+
+<%= link_to "Create a new thread", new_room_path, class: "btn btn-dark" %>

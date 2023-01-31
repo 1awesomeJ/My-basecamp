@@ -1,0 +1,21 @@
+<div id="<%= dom_id project %>">
+  <p>
+    <strong>Name:</strong>
+    <%= project.Name %>
+  </p>
+
+  <p>
+    <h4>Description:</h4>
+    <%= project.Description %>
+  </p>
+
+  <p>
+  <h4>Created By:</h4>
+  <% if project.user %>
+    <%= project.user.email %>
+  <% else%>
+    <h6> Deleted user</h6>
+  <% end %>
+  </p>
+
+</div>

@@ -1,0 +1,37 @@
+<div class="jumbotron">
+
+<h1 <%= render @project %></h1>
+  <%= link_to "Edit this project", edit_project_path(@project), class: "btn btn-primary" %> 
+  <%= link_to "Back to projects", projects_path, class: "btn btn-dark" %>
+  </br></br>
+  <h4>Project attachments: </h4><h6>(click on the image/icon to view or download)</h6>
+  <div class: "row">
+  <% @project.uploads.each do |attachment| %>
+    <% if attachment.image? %>
+    <div class="col-xs-6">
+      <%= link_to image_tag(attachment, width: 80), attachment, target: :_blank %>
+      <%= attachment.filename %><%= button_to "delete attachment", delete_attachment_path(attachment), method: :delete, class: "btn btn-outline-danger btn-sm mr-2" %>
+      <br/><br/>
+    </div>
+    <% elsif File.extname(attachment.filename.to_s) == ".pdf" %>
+    <div class="col-xs-6">
+      <%= link_to image_tag("pdf_icon.png", height: '40'), url_for(attachment), target: :_blank %>
+      <%= attachment.filename %><%= button_to "delete attachment", delete_attachment_path(attachment), method: :delete, class: "btn btn-outline-danger btn-sm mr-2" %>
+      <br/><br/>
+    </div>
+    <% elsif File.extname(attachment.filename.to_s) == ".txt" %>
+      <%= link_to image_tag("txt_icon.png", height: '40'), url_for(attachment), target: :_blank %>
+      <%= attachment.filename %><%= button_to "delete attachment", delete_attachment_path(attachment), method: :delete, data: {confirm: "Delete this file?" }, class: "btn btn-outline-danger btn-sm mr-2" %>
+      <br/><br/>
+    <% else %>
+      <%= link_to image_tag("file_icon.png", height: '40'), url_for(attachment), target: :_blank %>
+      <%= attachment.filename %><%= button_to "delete attachment", delete_attachment_path(attachment), method: :delete, class: "btn btn-outline-danger btn-sm mr-2" %>
+      <br/><br/>
+      <% end %>
+    <% end%>
+
+  </div>
+
+  </br></br>
+<%= button_to "Destroy this project", @project, method: :delete, class: "btn btn-danger" %>
+</div>
